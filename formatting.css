@@ -1,0 +1,82 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.image {
+    flex: 1;
+}
+
+img {
+    max-width: 100%; /* Set image to not exceed this width */
+    height: auto;    /* Maintain aspect ratio */
+}
+/* Reset default browser styles */
+html, body, div, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set background color and font styles */
+body {
+    background-color: beige;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: red;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Main content styles */
+section {
+    background-color: beige;
+    padding: 20px;
+}
+
+/* Quiz question styles */
+form h2 {
+    color: black;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Results styles */
+#dog-age-result {
+    font-weight: bold;
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    /* Modify styles for screens up to 600px width */
+    nav li {
+        margin: 0 10px;
+    }
+
+    form h2 {
+        font-size: 16px;
+    }
+
+    #dog-age-result {
+        font-size: 14px;
+    }
+}
