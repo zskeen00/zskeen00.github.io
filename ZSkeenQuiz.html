@@ -1,0 +1,145 @@
+<!-- ZSkeenQuiz.html (2nd Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dog Breed Quiz - All About Dogs</title>
+
+    <!-- Link to CSS files -->
+    <link rel="stylesheet" type="text/css" href="formatting.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="ZSkeenIndex.html">Home</a></li>
+            <li><a href="ZSkeenQuiz.html">Dog Breed Quiz</a></li>
+            <li><a href="ZSkeenCalculator.html">Dog Age Calculator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section>
+        <h1>Dog Breed Quiz</h1>
+        <p>Take our quiz to find out which dog breed might be the best match for you.</p>
+
+        <!-- Quiz Questions -->
+        <form>
+            <h2>Question 1: How active are you?</h2>
+            <label>
+                <input type="radio" name="q1" value="active"> Very active
+            </label>
+            <label>
+                <input type="radio" name="q1" value="moderate"> Moderately active
+            </label>
+            <label>
+                <input type="radio" name="q1" value="sedentary"> Mostly sedentary
+            </label>
+			
+			<h2>Question 2: Do you have a large backyard?</h2>
+            <label>
+                <input type="radio" name="q2" value="yes"> Yes
+			</label>
+			<label>
+				<input type="radio" name="q2" value="no"> No
+			</label>
+
+			<h2>Question 3: How much time can you dedicate to training a dog?</h2>
+			<label>
+				<input type="radio" name="q3" value="a lot"> A lot
+			</label>
+			<label>
+				<input type="radio" name="q3" value="some"> Some
+			</label>
+			<label>
+				<input type="radio" name="q3" value="limited"> Limited
+			</label>
+
+			<h2>Question 4: Do you have other pets at home?</h2>
+			<label>
+				<input type="radio" name="q4" value="yes"> Yes
+			</label>
+			<label>
+				<input type="radio" name="q4" value="no"> No
+			</label>
+			
+			<h2>Question 5: Do you have any allergies to pet dander?</h2>
+			<label>
+				<input type="radio" name="q5" value="yes"> Yes
+			</label>
+			<label>
+				<input type="radio" name="q5" value="no"> No
+			</label>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+	<!-- Quiz Results -->
+	<section id="quiz-results">
+		<h2>Quiz Results</h2>
+		<p id="result-text"></p>
+	</section>
+
+	<script>
+		// Calculate and display the quiz results
+		const form = document.querySelector('form');
+		form.addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			// Get the user's answers
+			const answers = {
+            q1: form.q1.value,
+            q2: form.q2.value,
+            q3: form.q3.value,
+            q4: form.q4.value,
+            q5: form.q5.value,
+			};
+
+			// Calculate the results based on the answers
+			let result = '';
+
+			if (answers.q1 === 'active') {
+				if (answers.q2 === 'yes') {
+					result += 'You might be a good fit for an energetic, large breed like a Labrador Retriever or German Shepherd. ';
+				} else if (answers.q2 === 'no') {
+					result += 'Consider a medium-sized, active breed like a Border Collie or Cocker Spaniel. ';
+				}
+			}
+
+			if (answers.q1 === 'moderate') {
+				if (answers.q3 === 'a lot') {
+					result += 'A Beagle or Dachshund could be a great choice for you. ';
+				} else if (answers.q3 === 'some') {
+                result += 'A Golden Retriever or Bulldog might be a good fit. ';
+					} else if (answers.q3 === 'limited') {
+						result += 'Consider a smaller, low-energy breed like a Shih Tzu or Pug. ';
+				}
+			}
+
+			if (answers.q1 === 'sedentary') {
+				if (answers.q4 === 'yes') {
+					result += 'Consider adopting a cat or other low-maintenance pet. ';
+				} else {
+					if (answers.q5 === 'yes') {
+                    result += 'Consider a hypoallergenic breed like a Poodle or Maltese. ';
+					} else {
+						result += 'A Great Dane or Greyhound might be a good choice. ';
+                }
+            }
+        }
+
+        // Display the result to the user
+        const resultText = document.querySelector('#result-text');
+        resultText.textContent = `Based on your answers: ${result}`;
+    });
+</script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&#169; 2023 All About Dogs</p>
+    </footer>
+</body>
+</html>

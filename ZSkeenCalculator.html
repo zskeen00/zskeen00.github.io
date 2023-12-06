@@ -1,0 +1,45 @@
+<!-- ZSkeenCalculator.html (3rd Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Age Calculator</title>
+	
+	<!-- Link to CSS files -->
+    <link rel="stylesheet" type="text/css" href="formatting.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+	 <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="ZSkeenIndex.html">Home</a></li>
+            <li><a href="ZSkeenQuiz.html">Dog Breed Quiz</a></li>
+            <li><a href="ZSkeenCalculator.html">Dog Age Calculator</a></li>
+        </ul>
+    </nav>
+
+	<!-- Main Content -->
+    <header>
+        <h1>Dog Age Calculator</h1>
+    </header>
+
+    <section>
+        <h2>Calculate Your Dog's Age</h2>
+        <form id="age-calculator-form">
+            <label for="human-age">Enter your dog's age in human years:</label>
+            <input type="number" id="human-age" required>
+            <button type="submit">Calculate</button>
+        </form>
+    </section>
+
+    <section id="result">
+        <h2>Result:</h2>
+        <p id="dog-age-result"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
